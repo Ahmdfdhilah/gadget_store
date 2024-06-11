@@ -15,31 +15,43 @@ services:
       - db
       # - redis
 
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    volumes:
-      - ./frontend/src:/usr/src/app/src
-    ports:
-      - '3001:3000'
-    environment:
-      - NODE_ENV=development
-    depends_on:
-      - backend
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - ./frontend/src:/usr/src/app/src
+  #   ports:
+  #     - '3001:3000'
+  #   environment:
+  #     - NODE_ENV=development
+  #   depends_on:
+  #     - backend
 
   db:
-    image: mysql
+    image: mariadb:10.6
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_USER=testuser
       - MYSQL_PASSWORD=password
       - MYSQL_TCP_PORT=3307
       - MYSQL_DATABASE=trust
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - '8080:80' 
+    environment:
+      - PMA_ARBITRARY=1 
+      - PMA_PORT=3307
+      - PMA_HOST=db
+      - PMA_PASSWORD=password
+      - PMA_USER=testuser
 
-  # redis:
-  #   image: redis
-  #   ports:
-  #     - '6379:6379'
-  #   env_file:
-  #     - ./backend/.env
+
+# redis:
+#   image: redis
+#   ports:
+#     - '6379:6379'
+#   env_file:
+#     - ./backend/.env
