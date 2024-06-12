@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./backend/src:/usr/src/app/src
+      - ./backend/public/upload:/usr/src/app/public/upload
     ports:
       - '3000:3000'
     env_file:
@@ -15,18 +16,18 @@ services:
       - db
       # - redis
 
-  # frontend:
-  #   build:
-  #     context: ./frontend
-  #     dockerfile: Dockerfile
-  #   volumes:
-  #     - ./frontend/src:/usr/src/app/src
-  #   ports:
-  #     - '3001:3000'
-  #   environment:
-  #     - NODE_ENV=development
-  #   depends_on:
-  #     - backend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend/src:/usr/src/app/src
+    ports:
+      - '3001:3001'
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
 
   db:
     image: mariadb:10.6
