@@ -4,10 +4,59 @@
 
 This is an online shop application designed to provide a seamless shopping experience. It is built with a modern tech stack, utilizing **NestJS** for the backend and **React.js** for the frontend. The project is designed to handle a large number of users efficiently and securely.
 
+## Images
+
+### Homepage
+![Homepage](./assets/homepage.png)
+
+### Homepage (Alternative View)
+![Homepage2](./assets/homepage2.png)
+
+### Product Details
+![Detail Product](./assets/detailproduct.png)
+![Detail Product 2](./assets/detailproduct2.png)
+![Detail Product 3](./assets/detailproduct3.png)
+
+### Cart
+![Cart](./assets/cart.png)
+
+### Checkout
+![Checkout](./assets/checkout.png)
+
+### User Profile
+![Profile](./assets/profile.png)
+
+### Login and Registration
+![Login](./assets/login.png)
+![Register](./assets/register.png)
+
+### Terms and FAQ
+![Terms](./assets/terms.png)
+![FAQ](./assets/faq.png)
+
+### Order Details
+![Order Details](./assets/orderDetails.png)
+![Order Details 2](./assets/orderDetails2.png)
+
+### Product Review
+![Product Review](./assets/poductReview.png)
+
+
 ## Table of Contents
 
 - [Online Shop Project](#online-shop-project)
   - [Overview](#overview)
+  - [Images](#images)
+    - [Homepage](#homepage)
+    - [Homepage (Alternative View)](#homepage-alternative-view)
+    - [Product Details](#product-details)
+    - [Cart](#cart)
+    - [Checkout](#checkout)
+    - [User Profile](#user-profile)
+    - [Login and Registration](#login-and-registration)
+    - [Terms and FAQ](#terms-and-faq)
+    - [Order Details](#order-details)
+    - [Product Review](#product-review)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Tech Stack](#tech-stack)
