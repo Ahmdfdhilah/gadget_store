@@ -1,0 +1,505 @@
+{
+	"info": {
+		"_postman_id": "96795cb1-2647-43c9-a733-ff6e7805f2d1",
+		"name": "T. rust API BACKEND",
+		"description": "Here is an overview of your routes formatted for Postman:\n\n### User Address Routes\n\n#### Base URL: `http://localhost:3000/users/user-address`\n\n1. **Get User Address by User ID**\n    \n    - **Method**: GET\n        \n    - **URL**: `/users/user-address/:userId`\n        \n    - **Description**: Retrieves the address details for the given user ID.\n        \n    - **Parameters**:\n        \n        - `userId` (string): User ID\n            \n2. **Create User Address**\n    \n    - **Method**: POST\n        \n    - **URL**: `/users/user-address/:userId`\n        \n    - **Description**: Creates a new address for the given user ID.\n        \n    - **Parameters**:\n        \n        - `userId` (string): User ID\n            \n    - **Body**:\n        \n        - `CreateUserAddressDto` (object): The address details to be created\n            \n3. **Update User Address**\n    \n    - **Method**: PUT\n        \n    - **URL**: `/users/user-address/:userId`\n        \n    - **Description**: Updates the address details for the given user ID.\n        \n    - **Parameters**:\n        \n        - `userId` (string): User ID\n            \n    - **Body**:\n        \n        - `UpdateUserAddressDto` (object): The updated address details\n            \n4. **Delete User Address**\n    \n    - **Method**: DELETE\n        \n    - **URL**: `/users/user-address/:id`\n        \n    - **Description**: Deletes the address with the given ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): Address ID\n            \n\n### User Details Routes\n\n#### Base URL: `http://localhost:3000/users/details-user`\n\n1. **Get User Details by User ID**\n    \n    - **Method**: GET\n        \n    - **URL**: `/users/details-user/:userId`\n        \n    - **Description**: Retrieves the user details for the given user ID.\n        \n    - **Parameters**:\n        \n        - `userId` (string): User ID\n            \n2. **Create User Details**\n    \n    - **Method**: POST\n        \n    - **URL**: `/users/details-user/:userId`\n        \n    - **Description**: Creates user details for the given user ID, including file upload.\n        \n    - **Parameters**:\n        \n        - `userId` (string): User ID\n            \n    - **Body**:\n        \n        - `file` (file): The file to be uploaded\n            \n        - `CreateUserDetailsDto` (object): The user details to be created\n            \n3. **Update User Details**\n    \n    - **Method**: PUT\n        \n    - **URL**: `/users/details-user/:userId`\n        \n    - **Description**: Updates the user details for the given user ID, including file upload.\n        \n    - **Parameters**:\n        \n        - `userId` (string): User ID\n            \n    - **Body**:\n        \n        - `file` (file): The file to be uploaded\n            \n        - `UpdateUserDetailsDto` (object): The updated user details\n            \n4. **Delete User Details**\n    \n    - **Method**: DELETE\n        \n    - **URL**: `/users/details-user/:id`\n        \n    - **Description**: Deletes the user details with the given ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): User Details ID\n            \n\n### User Routes\n\n#### Base URL: `http://localhost:3000/users`\n\n1. **Get All Users**\n    \n    - **Method**: GET\n        \n    - **URL**: `/users`\n        \n    - **Description**: Retrieves a list of all users.\n        \n2. **Get User by ID**\n    \n    - **Method**: GET\n        \n    - **URL**: `/users/:id`\n        \n    - **Description**: Retrieves the user details for the given user ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): User ID\n            \n3. **Update User**\n    \n    - **Method**: PUT\n        \n    - **URL**: `/users/:id`\n        \n    - **Description**: Updates the user details for the given user ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): User ID\n            \n    - **Body**:\n        \n        - `UpdateUserDto` (object): The updated user details\n            \n4. **Delete User**\n    \n    - **Method**: DELETE\n        \n    - **URL**: `/users/:id`\n        \n    - **Description**: Deletes the user with the given ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): User ID\n            \n\n### Order Routes\n\n#### Base URL: `http://localhost:3000/orders`\n\n1. **Create Order**\n    \n    - **Method**: POST\n        \n    - **URL**: `/orders`\n        \n    - **Description**: Creates a new order.\n        \n    - **Body**:\n        \n        - `CreateOrderDto` (object): The order details\n            \n2. **Get All Orders**\n    \n    - **Method**: GET\n        \n    - **URL**: `/orders`\n        \n    - **Description**: Retrieves a list of all orders.\n        \n3. **Get Order by ID**\n    \n    - **Method**: GET\n        \n    - **URL**: `/orders/:id`\n        \n    - **Description**: Retrieves the order details for the given order ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): Order ID\n            \n4. **Update Order**\n    \n    - **Method**: PUT\n        \n    - **URL**: `/orders/:id`\n        \n    - **Description**: Updates the order details for the given order ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): Order ID\n            \n    - **Body**:\n        \n        - `UpdateOrderDto` (object): The updated order details\n            \n5. **Delete Order**\n    \n    - **Method**: DELETE\n        \n    - **URL**: `/orders/:id`\n        \n    - **Description**: Deletes the order with the given ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): Order ID\n            \n6. **Update Order Status from Midtrans**\n    \n    - **Method**: GET\n        \n    - **URL**: `/orders/:id/update-status-from-midtrans`\n        \n    - **Description**: Updates the order status based on the Midtrans status.\n        \n    - **Parameters**:\n        \n        - `id` (string): Order ID\n            \n7. **Get Shipping Provinces**\n    \n    - **Method**: GET\n        \n    - **URL**: `/orders/shipping/province`\n        \n    - **Description**: Retrieves the list of shipping provinces.\n        \n8. **Get Shipping Province by ID**\n    \n    - **Method**: GET\n        \n    - **URL**: `/orders/shipping/province/:id`\n        \n    - **Description**: Retrieves the shipping province details for the given province ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): Province ID\n            \n9. **Get Shipping Cities**\n    \n    - **Method**: GET\n        \n    - **URL**: `/orders/shipping/city`\n        \n    - **Description**: Retrieves the list of shipping cities.\n        \n10. **Get Shipping City by ID**\n    \n    - **Method**: GET\n        \n    - **URL**: `/orders/shipping/city/:id`\n        \n    - **Description**: Retrieves the shipping city details for the given city ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): City ID\n            \n11. **Get Shipping Price**\n    \n    - **Method**: POST\n        \n    - **URL**: `/orders/shipping/price`\n        \n    - **Description**: Retrieves the shipping price based on the given details.\n        \n    - **Body**:\n        \n        - `CreatePriceShippingDto` (object): The details for calculating the shipping price\n            \n\n### Product Routes\n\n#### Base URL: `http://localhost:3000/products`\n\n1. **Get All Products**\n    \n    - **Method**: GET\n        \n    - **URL**: `/products`\n        \n    - **Description**: Retrieves a list of all products.\n        \n2. **Get Product by ID**\n    \n    - **Method**: GET\n        \n    - **URL**: `/products/:id`\n        \n    - **Description**: Retrieves the product details for the given product ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): Product ID\n            \n3. **Create Product**\n    \n    - **Method**: POST\n        \n    - **URL**: `/products`\n        \n    - **Description**: Creates a new product, including file upload.\n        \n    - **Body**:\n        \n        - `file` (file): The file to be uploaded\n            \n        - `CreateProductDto` (object): The product details to be created\n            \n4. **Update Product**\n    \n    - **Method**: PUT\n        \n    - **URL**: `/products/:id`\n        \n    - **Description**: Updates the product details for the given product ID, including file upload.\n        \n    - **Parameters**:\n        \n        - `id` (string): Product ID\n            \n    - **Body**:\n        \n        - `file` (file): The file to be uploaded\n            \n        - `UpdateProductDto` (object): The updated product details\n            \n5. **Delete Product**\n    \n    - **Method**: DELETE\n        \n    - **URL**: `/products/:id`\n        \n    - **Description**: Deletes the product with the given ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): Product ID\n            \n\n### Product Review Routes\n\n#### Base URL: `http://localhost:3000/products/product-reviews`\n\n1. **Get All Product Reviews**\n    \n    - **Method**: GET\n        \n    - **URL**: `/products/product-reviews`\n        \n    - **Description**: Retrieves a list of all product reviews.\n        \n2. **Get Product Review by ID**\n    \n    - **Method**: GET\n        \n    - **URL**: `/products/product-reviews/:id`\n        \n    - **Description**: Retrieves the product review details for the given review ID.\n        \n\n- **Parameters**:\n    \n    - `id` (string): Review ID\n        \n\n1. **Create Product Review**\n    \n    - **Method**: POST\n        \n    - **URL**: `/products/product-reviews/:productId`\n        \n    - **Description**: Creates a new product review for the given product ID.\n        \n    - **Parameters**:\n        \n        - `productId` (string): Product ID\n            \n    - **Body**:\n        \n        - `CreateProductReviewDto` (object): The product review details to be created\n            \n2. **Update Product Review**\n    \n    - **Method**: PUT\n        \n    - **URL**: `/products/product-reviews/:id`\n        \n    - **Description**: Updates the product review details for the given review ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): Review ID\n            \n    - **Body**:\n        \n        - `UpdateProductReviewDto` (object): The updated product review details\n            \n3. **Delete Product Review**\n    \n    - **Method**: DELETE\n        \n    - **URL**: `/products/product-reviews/:id`\n        \n    - **Description**: Deletes the product review with the given ID.\n        \n    - **Parameters**:\n        \n        - `id` (string): Review ID\n            \n\n### Authentication Routes\n\n#### Base URL: `http://localhost:3000/auth`\n\n1. **Verify Token**\n    \n    - **Method**: GET\n        \n    - **URL**: `/auth/verify-token`\n        \n    - **Description**: Verifies the token and returns user information if valid.\n        \n\nThese routes should cover the main functionalities of your application. You can import them into Postman by creating a new collection and adding each request with the respective details.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28269136"
+	},
+	"item": [
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "create order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/info",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"info"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "get all orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/info?id=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"info"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "update order by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful PUT request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/info?id=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"info"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "delete order by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful DELETE request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/info?id=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"info"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "get order by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create payment methods",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get payment methods by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create categories",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get shipping province",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get shipping price from raja ongkir",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get shipping province by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get shipping city",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get shipping city by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get order status",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get update status from midtrans",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get orderItemById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "delete products",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create product reviews",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create product",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get product by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update product by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update user review",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get all product reviews",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get product reviews by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete product reviews",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "delete user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get all user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get user details",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create address",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update user address",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update user details",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create user details",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "validate-user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
